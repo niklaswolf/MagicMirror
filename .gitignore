@@ -51,6 +51,10 @@ Temporary Items
 .directory
 .Trash-*
 
+#Eclipse
+.project
+
+
 # Various Magic Mirror ignoramuses and anti-ignoramuses.
 
 # Don't ignore the node_helper nore module.
