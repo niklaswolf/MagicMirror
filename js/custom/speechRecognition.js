@@ -7,19 +7,22 @@ var speechRecognition = {
 		var recognition = new webkitSpeechRecognition();
 		var resultIndex = 0;
 		recognition.lang = "de-DE";
-		recognition.continuous = true;
+		recognition.continuous = false;
 		recognition.interimResults = false;
 		recognition.onresult = function(event) {
 			var text = event.results[resultIndex][0].transcript;
 			text = text.trim();
-			speechRecognition.testInput(text);
 			resultIndex++;
-		  console.log(text); 
+			console.log(text); 
+			speechRecognition.testInput(text);
+			
 		}
 		recognition.onerror = function(event) { 
 			  console.log(event) 
 		}
 		recognition.onend = function(){
+			console.log('restart');
+			resultIndex = 0;
 			recognition.start();
 		}
 		recognition.start();

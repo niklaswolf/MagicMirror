@@ -24,7 +24,7 @@ var config = {
 			module: 'calendar',
 			header: 'US Holidays',
 			position: 'top_left',
-			classes: 'hide',
+			classes: '/hide',
 			config: {
 				calendars: [
 					{
