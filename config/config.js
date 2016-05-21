@@ -17,12 +17,14 @@ var config = {
 		},
 		{
 			module: 'clock',
-			position: 'top_left'
+			position: 'top_left',
+			classes: 'hide'
 		},
 		{
 			module: 'calendar',
 			header: 'US Holidays',
 			position: 'top_left',
+			classes: 'hide',
 			config: {
 				calendars: [
 					{
@@ -34,7 +36,8 @@ var config = {
 		},
 		{
 			module: 'compliments',
-			position: 'lower_third'
+			position: 'lower_third',
+			classes: 'hide'
 		},
 		{
 			module: 'currentweather',
@@ -48,6 +51,7 @@ var config = {
 			module: 'weatherforecast',
 			position: 'top_right',
 			header: 'Weather Forecast',
+			classes: 'hide',
 			config: {
 	            location: 'New York',
 	            appid: 'YOUR_OPENWEATHER_API_KEY'
