@@ -9,6 +9,9 @@
  * Changes to this files will be ignored by GIT. *
  *****************************************************/
 
+.hide{
+	display:none !important;
+}
  body {
  	
  }
