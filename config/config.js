@@ -7,7 +7,7 @@
 var config = {
 	port: 8080,
 
-	language: 'en',
+	language: 'de',
 	timeFormat: 24,
 	units: 'metric',
 
@@ -18,7 +18,7 @@ var config = {
 		{
 			module: 'clock',
 			position: 'top_left',
-			classes: 'hide'
+			classes: '/hide'
 		},
 		{
 			module: 'calendar',
@@ -26,10 +26,13 @@ var config = {
 			position: 'top_left',
 			classes: '/hide',
 			config: {
+				maximumEntries: 3,
+				timeFormat: 'absolute',
+				fade: false,
 				calendars: [
 					{
 						symbol: 'calendar-check-o ',
-						url: 'webcal://www.calendarlabs.com/templates/ical/US-Holidays.ics'
+						url: 'webcal://p11-calendarws.icloud.com/ca/subscribe/1/YnlOe2Ee4msfLRX-QRVuQk41sWaBegx9gkrUE1VcmRyANrP647m-po-y6hkdqnVj'
 					}
 				]
 			}
@@ -37,34 +40,35 @@ var config = {
 		{
 			module: 'compliments',
 			position: 'lower_third',
-			classes: 'hide'
+			classes: '/hide'
 		},
 		{
 			module: 'currentweather',
 			position: 'top_right',
 			config: {
-				location: 'New York',
-				appid: 'YOUR_OPENWEATHER_API_KEY'
+				location: 'Deggendorf,Germany',
+				appid: 'f5c0d7ebbbf7c09e577f9d8b85c9151e'
 			}
 		},
 		{
 			module: 'weatherforecast',
 			position: 'top_right',
 			header: 'Weather Forecast',
-			classes: 'hide',
+			classes: '/hide',
 			config: {
-	            location: 'New York',
-	            appid: 'YOUR_OPENWEATHER_API_KEY'
+	            location: 'Deggendorf,Germany',
+	            appid: 'f5c0d7ebbbf7c09e577f9d8b85c9151e'
 			}
 		},
 		{
 			module: 'newsfeed',
-			position: 'bottom_bar',
+			position: 'top_left',
+			classes: '/hide',
 			config: {
 				feeds: [
 					{
-						title: "New York Times",
-						url: "http://www.nytimes.com/services/xml/rss/nyt/HomePage.xml"
+						title: "Short News",
+						url: "http://shortnews.de/rss/Alles.xml"
 					}
 				],
 				showSourceTitle: true,
