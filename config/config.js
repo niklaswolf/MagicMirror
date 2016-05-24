@@ -17,13 +17,13 @@ var config = {
 		},
 		{
 			module: 'clock',
-			position: 'top_left',
+			position: 'left',
 			classes: '/hide'
 		},
 		{
 			module: 'calendar',
-			header: 'US Holidays',
-			position: 'top_left',
+			header: 'Kalender',
+			position: 'left',
 			classes: '/hide',
 			config: {
 				maximumEntries: 3,
@@ -39,12 +39,12 @@ var config = {
 		},
 		{
 			module: 'compliments',
-			position: 'lower_third',
+			position: 'middle_bottom',
 			classes: '/hide'
 		},
 		{
 			module: 'currentweather',
-			position: 'top_right',
+			position: 'right',
 			config: {
 				location: 'Deggendorf,Germany',
 				appid: 'f5c0d7ebbbf7c09e577f9d8b85c9151e'
@@ -52,9 +52,9 @@ var config = {
 		},
 		{
 			module: 'weatherforecast',
-			position: 'top_right',
+			position: 'right',
 			header: 'Weather Forecast',
-			classes: '/hide',
+			classes: 'hide',
 			config: {
 	            location: 'Deggendorf,Germany',
 	            appid: 'f5c0d7ebbbf7c09e577f9d8b85c9151e'
@@ -62,7 +62,7 @@ var config = {
 		},
 		{
 			module: 'newsfeed',
-			position: 'top_left',
+			position: 'left',
 			classes: '/hide',
 			config: {
 				feeds: [
