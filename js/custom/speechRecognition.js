@@ -35,6 +35,26 @@ var speechRecognition = {
 		
 		var clock = {'className' : 'clock', 'regexp' : /uhr(?:zeit)?/};
 		speechRecognition.testItem(clock, input, null, /(?:wie\sviel\s)|(?:zeige?n?)/);
+		
+		var newsfeed = {'className' : 'fullnews', 'regexp' : /nachricht?e?n?/};
+		speechRecognition.testItem(newsfeed, input, null, /(?:zeige?n?)/);
+		
+		var calendar = {'className' : 'gcal', 'regexp' : /kalender/};
+		speechRecognition.testItem(calendar, input, null, /(?:zeige?n?)/);
+		
+		speechRecognition.music(input);
+	},
+	'music' : function (input){
+		var pause = /fresse/;
+		var radio = /radio?/;
+		var music = /musi?k?c?/;
+		
+		if (input.match(radio) || input.match(music)){
+			document.getElementById('rock').play();
+		}
+		if (input.match(pause)){
+			document.getElementById('rock').pause();
+		}
 	},
 	'testItem' : function (item, input, hideKeywords=null, showKeywords=null){
 		var hide = /schließe?n?/;

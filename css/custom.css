@@ -15,6 +15,15 @@
  body {
  	
  }
+
+.gcal {
+	background-color: #000;
+}
+
+.st-bg { background:black; }
+.st-bg-today { background:yellow; border-left:1px solid yellow; border-right:1px solid yellow; }
+.st-dtitle { background:white; }
+
 .left {
 	width: 22%;
 }

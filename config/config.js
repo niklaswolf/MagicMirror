@@ -47,14 +47,14 @@ var config = {
 			position: 'right',
 			config: {
 				location: 'Deggendorf,Germany',
-				appid: 'f5c0d7ebbbf7c09e577f9d8b85c9151e'
+				appid: 'f5c0d7ebbbf7c09e577f9d8b85c9151e',				
 			}
 		},
 		{
 			module: 'weatherforecast',
 			position: 'right',
 			header: 'Weather Forecast',
-			classes: 'hide',
+			classes: '/hide',
 			config: {
 	            location: 'Deggendorf,Germany',
 	            appid: 'f5c0d7ebbbf7c09e577f9d8b85c9151e'
@@ -75,6 +75,25 @@ var config = {
 				showPublishDate: true
 			}
 		},
+		
+		{
+			module: 'newsfeed',
+			position: 'middle_center',
+			classes: 'hide fullnews',
+			config: {
+				feeds: [
+					{
+						title: "Short News",
+						url: "http://shortnews.de/rss/Alles.xml"
+					}
+				],
+				showSourceTitle: true,
+				showPublishDate: true,
+				showDescription: true
+			}
+		},
+		
+		
 	]
 
 };

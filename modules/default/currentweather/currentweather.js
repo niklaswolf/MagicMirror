@@ -115,7 +115,7 @@ Module.register("currentweather",{
 
 		var small = document.createElement("div");
 		small.className = "normal medium";
-
+/*
 		var windIcon = document.createElement("span");
 		windIcon.className = "wi wi-strong-wind dimmed";
 		small.appendChild(windIcon);
@@ -140,7 +140,7 @@ Module.register("currentweather",{
 		var sunriseSunsetTime = document.createElement("span");
 		sunriseSunsetTime.innerHTML = " " + this.sunriseSunsetTime;
 		small.appendChild(sunriseSunsetTime);
-
+*/
 		var large = document.createElement("div");
 		large.className = "large light";
 

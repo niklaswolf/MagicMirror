@@ -10,6 +10,16 @@ var Server = require(__dirname + "/server.js");
 var defaultModules = require(__dirname + "/../modules/default/defaultmodules.js");
 var path = require("path");
 
+/*var PHP = require('node-phpfpm');
+var php = new PHP({ host:'127.0.0.1', port:8080 });
+php.run(__dirname +"/../node_modules/node-phpfpm/test/test1.php", function(err, output, phpErrors)
+{
+    if (err == 99) console.error('PHPFPM server error');
+    console.log(output);
+    if (phpErrors) console.error(phpErrors);
+});*/
+
+
 // The next part is here to prevent a major exception when there
 // is no internet connection. This could probable be solved better.
 process.on("uncaughtException", function (err) {
