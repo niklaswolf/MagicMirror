@@ -10,8 +10,11 @@
  *****************************************************/
 
 .hide{
-	display:none !important;
+	display: none;
 	/opacity: 0.3 !important;
+}
+.show {
+	display: block;
 }
  body {
  	

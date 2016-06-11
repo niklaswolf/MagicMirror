@@ -39,7 +39,7 @@ var speechRecognition = {
 		var newsfeed = {'className' : 'fullnews', 'regexp' : /nachricht?e?n?/};
 		speechRecognition.testItem(newsfeed, input, null, /(?:zeige?n?)/);
 		
-		var calendar = {'className' : 'gcal', 'regexp' : /kalender/};
+		var calendar = {'className' : 'full_calendar', 'regexp' : /kalender/};
 		speechRecognition.testItem(calendar, input, null, /(?:zeige?n?)/);
 		
 		speechRecognition.music(input);
@@ -68,11 +68,7 @@ var speechRecognition = {
 		
 		// close the current module
 		if (input.match(hide) && input.match(item.regexp)){
-			
-			var domObject = document.getElementsByClassName(item.className)[0];
-			domObject.classList.add('hide');
-			domObject.classList.remove('show');
-			/*var domObjects = document.getElementsByClassName('module');
+			var domObjects = document.getElementsByClassName('module');
 			for (var i=0; i<domObjects.length; i++){
 				//close module
 				if(domObjects[i].classList.contains(item.className)){
@@ -80,16 +76,14 @@ var speechRecognition = {
 				}
 				//show all other modules
 				else {
-					domObjects[i].classList.remove('hide');
-				}}	*/			
+					if(!domObjects[i].parentElement.parentElement.classList.contains('middle')){
+						domObjects[i].classList.remove('hide');
+					}
+				}
+			}			
 		}
 		// show the module
 		else if (input.match(show) && input.match(item.regexp)){
-			
-			var domObject = document.getElementsByClassName(item.className)[0];
-			domObject.classList.add('show');
-			domObject.classList.remove('hide');
-			/*
 			var domObjects = document.getElementsByClassName('module');
 			for (var i=0; i<domObjects.length; i++){
 				//show module
@@ -99,16 +93,23 @@ var speechRecognition = {
 				//hide all other modules
 				else {
 					domObjects[i].classList.add('hide');
+					domObjects[i].classList.remove('show');
 				}				
-			}}*/
-		
-	}},
+			}
+		}
+	},
 	'testHome' : function (input, keyword){
 		if (input.match(keyword)){
 			var domObjects = document.getElementsByClassName('module');
 			for (var i=0; i<domObjects.length; i++){
+				//remove all show- and hide-classes
 				domObjects[i].classList.remove('hide');
 				domObjects[i].classList.remove('show');
+				
+				// add hide-class again to the fullscreen-modules
+				if (domObjects[i].parentElement.parentElement.classList.contains('center')){
+					domObjects[i].classList.add('hide');
+				}
 			}
 		}
 	},
