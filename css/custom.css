@@ -16,6 +16,10 @@
 .show {
 	display: block;
 }
+.show-always {
+	display: block !important;
+}
+
  body {
  	
  }

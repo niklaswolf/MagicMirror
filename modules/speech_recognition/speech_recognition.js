@@ -2,10 +2,46 @@
  * 
  */
 
-var speechRecognition = {
-	'start' : function () {
+Module.register("speech_recognition",{
+    // Default module config.
+    defaults: {
+    	listeningText : "sag etwas!",
+    },
+
+    recognizedText: '',
+    
+    // Override dom generator.
+    getDom: function() {
+    	var wrapper = document.createElement("div");
+    	wrapper.className = "bright";
+    	
+    	var listening = document.createElement("div");
+    	listening.className = 'listening';
+    	listening.innerHTML = this.config.listeningText;
+    	wrapper.appendChild(listening);
+    	
+    	var recognized = document.createElement("div");
+    	recognized.className = 'recognized-text';
+    	if(this.recognizedText){
+    		recognized.innerHTML = '"'+this.recognizedText+'"';
+    	}
+		wrapper.appendChild(recognized);
+
+		return wrapper;
+    },
+    
+    getStyles: function() {
+		return [this.file('speechRecognition.css')];
+	},
+	
+	getScripts: function() {
+		return [];
+	},
+	
+	start: function(){
 		var recognition = new webkitSpeechRecognition();
 		var resultIndex = 0;
+		var self = this;
 		recognition.lang = "de-DE";
 		recognition.continuous = false;
 		recognition.interimResults = false;
@@ -13,8 +49,10 @@ var speechRecognition = {
 			var text = event.results[resultIndex][0].transcript;
 			text = text.trim();
 			resultIndex++;
+			self.recognizedText = text;
+			self.updateDom();
 			console.log(text); 
-			speechRecognition.testInput(text);
+			self.testInput(text);
 			
 		}
 		recognition.onerror = function(event) { 
@@ -27,26 +65,27 @@ var speechRecognition = {
 		}
 		recognition.start();
 	},
-	'testInput' : function (input){
+		
+	testInput : function (input){
 		var input = input.toLowerCase();
 		
 		var compliment = {'className' : 'compliments', 'regexp' : /komplimente?/};
-		speechRecognition.testItem(compliment, input, null, /(?:zeige?n?)|(?:mache?n?)/);
+		this.testItem(compliment, input, null, /(?:zeige?n?)|(?:mache?n?)/);
 		
 		var clock = {'className' : 'clock', 'regexp' : /uhr(?:zeit)?/};
-		speechRecognition.testItem(clock, input, null, /(?:wie\sviel\s)|(?:zeige?n?)/);
+		this.testItem(clock, input, null, /(?:wie\sviel\s)|(?:zeige?n?)/);
 		
 		var newsfeed = {'className' : 'fullnews', 'regexp' : /nachricht?e?n?/};
-		speechRecognition.testItem(newsfeed, input, null, /(?:zeige?n?)/);
+		this.testItem(newsfeed, input, null, /(?:zeige?n?)/);
 		
 		var calendar = {'className' : 'full_calendar', 'regexp' : /kalender/};
-		speechRecognition.testItem(calendar, input, null, /(?:zeige?n?)/);
+		this.testItem(calendar, input, null, /(?:zeige?n?)/);
 		
-		speechRecognition.music(input);
+		this.music(input);
 		
-		speechRecognition.testHome(input, /(?:gehe\s)?zurück/);
+		this.testHome(input, /(?:gehe\s)?zurück/);
 	},
-	'music' : function (input){
+	music : function (input){
 		var pause = /fresse/;
 		var radio = /radio?/;
 		var music = /musi?k?c?/;
@@ -58,7 +97,7 @@ var speechRecognition = {
 			document.getElementById('rock').pause();
 		}
 	},
-	'testItem' : function (item, input, hideKeywords=null, showKeywords=null){
+	testItem : function (item, input, hideKeywords=null, showKeywords=null){
 		var hide = /schließe?n?/;
 		if(showKeywords){
 			var show = showKeywords;
@@ -113,6 +152,4 @@ var speechRecognition = {
 			}
 		}
 	},
-
-}
-speechRecognition.start();
+});
