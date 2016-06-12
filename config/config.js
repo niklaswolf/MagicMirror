@@ -107,6 +107,21 @@ var config = {
 				listeningText : "Sag' etwas!",
 			}
 		},
+		{
+			module: 'help',
+			position: 'middle_center',
+			classes: 'hide',
+			config: {
+				contents : {
+					'Zurück (zum Dashboard)' : ['Zurück', 'Gehe zurück'],
+					'Kalender' : ['Zeige mir den Kalender', 'Zeige meine Termine'],
+					'Radio' : ['Starte das Radio', 'Halt die Fresse!'],
+					'Nachrichten' : ['Zeige mir die Nachrichten'],
+					
+					
+				}
+			}
+		}
 		
 		
 	]

@@ -81,6 +81,9 @@ Module.register("speech_recognition",{
 		var calendar = {'className' : 'full_calendar', 'regexp' : /kalender/};
 		this.testItem(calendar, input, null, /(?:zeige?n?)/);
 		
+		var help = {'className' : 'help', 'regexp' : /sagen/};
+		this.testItem(help, input, null, /was/);
+		
 		this.music(input);
 		
 		this.testHome(input, /(?:gehe\s)?zurück/);
@@ -98,7 +101,7 @@ Module.register("speech_recognition",{
 		}
 	},
 	testItem : function (item, input, hideKeywords=null, showKeywords=null){
-		var hide = /schließe?n?/;
+		var hide = /schliesse?n?/;
 		if(showKeywords){
 			var show = showKeywords;
 		} else {
