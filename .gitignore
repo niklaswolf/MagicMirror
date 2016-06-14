@@ -71,7 +71,8 @@ Temporary Items
 !/modules/full_calendar/**
 !/modules/help
 !/modules/help/**
-
+!/modules/speech_recognition
+!/modules/speech_recognition/**
 
 # Ignore changes to the custom css files.
 !/css/custom.css
