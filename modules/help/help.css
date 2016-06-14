@@ -1,0 +1,15 @@
+.help-table {
+	font-size: 0.8em;
+}
+
+.help-table tr {
+	text-align: left;
+	vertical-align: top;
+	line-height: 1;
+}
+.help-table td {
+	padding-bottom: 1em;
+}
+.help-table td > div {
+	padding-bottom: 0.3em;
+}

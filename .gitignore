@@ -67,5 +67,11 @@ Temporary Items
 !/modules/default/**
 !/modules/README.md**
 
+!/modules/full_calendar
+!/modules/full_calendar/**
+!/modules/help
+!/modules/help/**
+
+
 # Ignore changes to the custom css files.
-/css/custom.css
+!/css/custom.css
