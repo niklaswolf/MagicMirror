@@ -84,20 +84,32 @@ Module.register("speech_recognition",{
 		var help = {'className' : 'help', 'regexp' : /sagen/};
 		this.testItem(help, input, null, /was/);
 		
-		this.music(input);
+		this.radio(input);
+		this.audio(input);
 		
 		this.testHome(input, /(?:gehe\s)?zurück/);
 	},
-	music : function (input){
+	radio : function (input){
 		var pause = /fresse/;
-		var radio = /radio?/;
-		var music = /musi?k?c?/;
+		var start = /radio?/;
 		
-		if (input.match(radio) || input.match(music)){
+		
+		if (input.match(start)){
 			document.getElementById('rock').play();
 		}
 		if (input.match(pause)){
 			document.getElementById('rock').pause();
+		}
+	},
+	audio : function (input){
+		var pause = /fresse/;
+		var start = /aussehen?/;
+			
+		if (input.match(start)){
+			document.getElementById('schoen').play();
+		}
+		if (input.match(pause)){
+			document.getElementById('schoen').pause();
 		}
 	},
 	testItem : function (item, input, hideKeywords=null, showKeywords=null){

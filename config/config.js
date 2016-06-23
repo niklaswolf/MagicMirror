@@ -117,6 +117,7 @@ var config = {
 					'Kalender' : ['Zeige mir den Kalender', 'Zeige meine Termine'],
 					'Radio' : ['Starte das Radio', 'Halt die Fresse!'],
 					'Nachrichten' : ['Zeige mir die Nachrichten'],
+					'Aussehen' : ['Bewerte mein Aussehen', 'Halt die Fresse!'],
 					
 					
 				}
