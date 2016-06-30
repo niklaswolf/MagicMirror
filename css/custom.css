@@ -23,9 +23,19 @@
  body {
  	
  }
-
-.gcal {
-	background-color: #000;
+.fullcal{
+	text-align: left;
+}
+.fullcal header{
+	text-align: center;
+	font-size: 0.8em;
+}
+.fullcal .small{
+	font-size: 1em;
+	line-height: 1.1em;
+}
+.fullcal .title{
+	padding: 0.5em 0;
 }
 
 .st-bg { background:black; }

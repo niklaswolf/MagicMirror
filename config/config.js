@@ -24,14 +24,33 @@ var config = {
 			module: 'calendar',
 			header: 'Kalender',
 			position: 'left',
-			classes: '/hide',
 			config: {
-				maximumEntries: 3,
+				maximumEntries:3,
 				timeFormat: 'absolute',
 				fade: false,
+				urgency: 0,
 				calendars: [
 					{
-						symbol: 'calendar-check-o ',
+						symbol: 'calendar-check-o',
+						url: 'webcal://p11-calendarws.icloud.com/ca/subscribe/1/YnlOe2Ee4msfLRX-QRVuQk41sWaBegx9gkrUE1VcmRyANrP647m-po-y6hkdqnVj'
+					}
+				]
+			}
+		},
+		{
+			module: 'calendar',
+			header: 'Kalender',
+			position: 'middle_center',
+			classes: "fullcal hide",
+			config: {
+				maximumEntries:10,
+				maxTitleLength: 40,
+				timeFormat: 'absolute',
+				fade: false,
+				urgency: 0,
+				calendars: [
+					{
+						symbol: 'calendar-check-o',
 						url: 'webcal://p11-calendarws.icloud.com/ca/subscribe/1/YnlOe2Ee4msfLRX-QRVuQk41sWaBegx9gkrUE1VcmRyANrP647m-po-y6hkdqnVj'
 					}
 				]
@@ -96,7 +115,7 @@ var config = {
 			position: 'middle_center',
 			classes: 'hide',
 			config: {
-				url: 'https://calendar.google.com/calendar/embed?showTitle=0&amp;showNav=0&amp;showDate=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;height=600&amp;wkst=2&amp;bgcolor=%23000000&amp;src=9i1l9h7u96c6cv982ja0h10i2k3150is%40import.calendar.google.com&amp;color=%2342104A&amp;ctz=Europe%2FBerlin',
+				url:'https://calendar.google.com/calendar/embed?showTitle=0&amp;showNav=0&amp;showDate=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;height=600&amp;wkst=2&amp;bgcolor=%23000000&amp;src=9i1l9h7u96c6cv982ja0h10i2k3150is%40import.calendar.google.com&amp;color=%2342104A&amp;ctz=Europe%2FBerlin',
 			}
 		},
 		{
@@ -117,7 +136,7 @@ var config = {
 					'Kalender' : ['Zeige mir den Kalender', 'Zeige meine Termine'],
 					'Radio' : ['Starte das Radio', 'Halt die Fresse!'],
 					'Nachrichten' : ['Zeige mir die Nachrichten'],
-					'Aussehen' : ['Bewerte mein Aussehen', 'Halt die Fresse!'],
+					'Aussehen' : ['Wie findest du mein Aussehen?', 'Halt die Fresse!'],
 					
 					
 				}

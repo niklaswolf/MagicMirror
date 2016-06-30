@@ -78,7 +78,7 @@ Module.register("speech_recognition",{
 		var newsfeed = {'className' : 'fullnews', 'regexp' : /nachricht?e?n?/};
 		this.testItem(newsfeed, input, null, /(?:zeige?n?)/);
 		
-		var calendar = {'className' : 'full_calendar', 'regexp' : /kalender/};
+		var calendar = {'className' : 'fullcal', 'regexp' : /kalender/};
 		this.testItem(calendar, input, null, /(?:zeige?n?)/);
 		
 		var help = {'className' : 'help', 'regexp' : /sagen/};
