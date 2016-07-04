@@ -59,7 +59,27 @@ var config = {
 		{
 			module: 'compliments',
 			position: 'middle_bottom',
-			classes: '/hide'
+			classes: '/hide',
+			config: {
+				compliments: {
+					morning: [
+						"Guten Morgen!",
+						"Genieße den schönen Tag!",
+						"Gut geschlafen?"
+					],
+					afternoon: [
+						"Hallo, Beauty!",
+						"Du siehst sexy aus!",
+						"Gut siehst du aus!",
+						"Geile Sau!"
+					],
+					evening: [
+						"Wow, du siehst gut aus!",
+						"Wunderschön!",
+						"Hi, sexy!"
+					]
+				}
+			}
 		},
 		{
 			module: 'currentweather',
@@ -134,9 +154,9 @@ var config = {
 				contents : {
 					'Zurück (zum Dashboard)' : ['Zurück', 'Gehe zurück'],
 					'Kalender' : ['Zeige mir den Kalender', 'Zeige meine Termine'],
-					'Radio' : ['Starte das Radio', 'Halt die Fresse!'],
+					'Radio' : ['Starte das Radio', 'Stoppe das Radio!'],
 					'Nachrichten' : ['Zeige mir die Nachrichten'],
-					'Aussehen' : ['Wie findest du mein Aussehen?', 'Halt die Fresse!'],
+					'Aussehen' : ['Spieglein, Spieglein an der Wand...?'],
 					
 					
 				}

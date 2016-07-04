@@ -90,8 +90,8 @@ Module.register("speech_recognition",{
 		this.testHome(input, /(?:gehe\s)?zurück/);
 	},
 	radio : function (input){
-		var pause = /fresse/;
-		var start = /radio?/;
+		var pause = /ausschalten?/;
+		var start = /radio/;
 		
 		
 		if (input.match(start)){
@@ -102,8 +102,8 @@ Module.register("speech_recognition",{
 		}
 	},
 	audio : function (input){
-		var pause = /fresse/;
-		var start = /aussehen?/;
+		var pause = /stop(?:pe)?/;
+		var start = /spieglein/;
 			
 		if (input.match(start)){
 			document.getElementById('schoen').play();
